@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book</title>
+
+</head>
+<body>
+{% if condition is True %}
+    {% if available is True %}
+     <form action="success" method="post">
+                        {% csrf_token %}
+                        
+                               <label for="checkIn">Check In</label>
+                                <input readonly  type="date" class="form-control" id="checkIn" name="checkin-date" value={{checkindate}}>
+                                
+                           <label for="checkIn">Check In</label>
+                                <input readonly type="date" class="form-control" id="checkIn" name="checkout-date" value={{checkoutdate}}>
+                             
+                                 <select readonly  name="room" id="room" class="form-control">
+                                    <option value="{{room.id}}">{{room.name}}</option>
+                                </select>
+
+                               <label for="adults">Adult</label>
+                                <select readonly name="adults" id="adults" class="form-control">
+                                    <option value={{adults}}>{{adults}}</option>
+                                </select>
+                            <div class="col-12 col-md-3">
+                                <button type="submit" class="form-control btn roberto-btn w-100">Book Now</button>
+                            </div>
+                        </div>
+                    </form>
+    {% else %}
+           
+        No rooms available
+         Redirecting to Home page ...
+         <script type="text/javascript">
+    setTimeout("window.location='/'",2000);
+    </script>
+          
+
+    {% endif %}
+{% else %}
+    <script>
+    alert('Invalid Dates: CheckIn date cannot be in past and neither after checkout');
+    </script>
+    Redirecting to Home page ...
+   <script type="text/javascript">
+    setTimeout("window.location='/'",2000);
+    </script>
+{% endif %}
+</body>
+</html>

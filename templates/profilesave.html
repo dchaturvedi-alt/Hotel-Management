@@ -1,0 +1,409 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Profile</title>
+    <link rel="icon" href="{% static './img/core-img/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- /Preloader -->
+
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <!-- Search Form -->
+        <div class="search-form d-flex align-items-center">
+            <div class="container">
+                <form action="index.html' %}" method="get">
+                    <input type="search" name="search-form-input" id="searchFormInput" placeholder="Type your keyword ...">
+                    <button type="submit"><i class="icon_search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Top Header Area Start -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="top-header-content">
+                            <a href="{% static '#' %}"><i class="icon_phone"></i> <span>(123) 456-789-1230</span></a>
+                            <a href="{% static '#' %}"><i class="icon_mail"></i> <span>info.colorlib@gmail.com</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="top-header-content">
+                            <!-- Top Social Area -->
+                            <div class="top-social-area ml-auto">
+                              <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                              <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                              <a href="https://www.tripadvisor.in/"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+                              <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Top Header Area End -->
+
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between" id="robertoNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="{% static 'index.html' %}"><img src="{% static './img/core-img/logo.png' %}" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Menu Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="http://127.0.0.1:8000/">Home</a></li>
+                                    <li><a href="http://127.0.0.1:8000/room">Rooms</a></li>
+                                    <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                                    <li><a href="#">Pages</a>
+                                        <ul class="dropdown">
+                                            <li><a href="http://127.0.0.1:8000/blog">- Home</a></li>
+                                            <li><a href="http://127.0.0.1:8000/room">- Rooms</a></li>
+                                            {% comment %} <li><a href="{% static './single-room' %}">- Single Rooms</a></li> {% endcomment %}
+                                            <li><a href="http://127.0.0.1:8000/about">- About Us</a></li>
+                                            <li><a href="http://127.0.0.1:8000/blog">- Blog</a></li>
+                                            {% comment %} <li><a href="si">- Single Blog</a></li> {% endcomment %}
+                                            <li><a href="http://127.0.0.1:8000/contact">- Contact</a></li>
+                                            <li><a href="#">- Dropdown</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="{% static '#' %}">- Dropdown Item</a></li>
+                                                    <li><a href="{% static '#' %}">- Dropdown Item</a></li>
+                                                    <li><a href="{% static '#' %}">- Dropdown Item</a></li>
+                                                    <li><a href="{% static '#' %}">- Dropdown Item</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="http://127.0.0.1:8000/blog">News</a></li>
+                                    <li><a href="http://127.0.0.1:8000/contact">Contact</a></li>
+                                    {% if user.is_authenticated %}
+
+                                    <li><a href='accounts/profile'>Hello {{user.first_name}}</a></li>
+                                    <li><a href='accounts/logout'>Logout</a></li>
+                                    {% else %}
+                                    <li><a href="accounts/register">Register</a></li>
+                                    <li><a href="accounts/login">login</a></li>
+                                {% endif %}
+
+                                </ul>
+
+                                <!-- Search -->
+
+
+                                <!-- Book Now -->
+
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/16.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                    <div class="breadcrumb-content d-flex align-items-center justify-content-between pb-5">
+                        <h2 class="room-title">Hello {{user.first_name}} {{user.last_name}}</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+     {% for i in bookings %}
+     {% comment %} {{i.checkin}} {% endcomment %}
+    <div class="roberto-rooms-area section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <!-- Single Room Details Area -->
+                    <div class="single-room-details-area mb-50">
+                        <!-- Room Thumbnail Slides -->
+                        <div class="room-thumbnail-slides mb-50">
+                            <div id="room-thumbnail--slide" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                       <img src={{i.RNo.roomtype.img.url}} class="d-block w-100" alt="">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Room Features -->
+                        <div class="room-features-area d-flex flex-wrap mb-50">
+                            <h6>Size: <span>{{i.RNo.roomtype.size}} ft</span></h6>
+                            {% comment %} <h6>Capacity: <span>Max persion {{i.person}}</span></h6> {% endcomment %}
+                            <h6>Bed: <span>{{i.RNo.roomtype.bed}}</span></h6>
+                            <h6>Services: <span>{% if i.RNo.roomtype.ac %} AC,{% endif %} {% if i.RNo.roomtype.tv %} Smart Tv {% endif %} {% if i.RNo.roomtype.wifi %} Wifi ,{% endif %} {% if i.RNo.roomtype.tv %} Television, {% endif %} Bathroom<span></h6>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Room Service -->
+                    <div class="room-service mb-50">
+                        <h4>Room Services</h4>
+
+                        <ul>
+                            <li><img src="{% static 'img/core-img/icon1.png' %}" alt=""> Air Conditioning</li>
+                            <li><img src="{% static 'img/core-img/icon2.png' %}" alt=""> Free drinks</li>
+                            <li><img src="{% static 'img/core-img/icon3.png' %}" alt=""> Restaurant quality</li>
+                            <li><img src="{% static 'img/core-img/icon4.png' %}" alt=""> Cable TV</li>
+                            <li><img src="{% static 'img/core-img/icon5.png' %}" alt=""> Unlimited Wifi</li>
+                            <li><img src="{% static 'img/core-img/icon6.png' %}" alt=""> Service 24/24</li>
+                        </ul>
+                    </div>
+
+                    <!-- Room Review -->
+                    <div class="room-review-area mb-100">
+                        <h4>RoomCongratulations Review</h4>
+
+                        <!-- Single Review Area -->
+
+
+                        <!-- Single Review Area -->
+
+
+                        <!-- Single Review Area -->
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <!-- Hotel Reservation Area -->
+                    <div class="hotel-reservation--area mb-100">
+
+                        <form action="cancel" method="post">
+                        {% csrf_token %}
+                            <div class="form-group mb-30">
+                                <label for="checkInDate">Date</label>
+                                <div >
+                                    <div class="row no-gutters">
+                                        {% comment %} <div class="col-6"> {% endcomment %}
+                                            CheckIn Date : {{i.checkin}}
+                                            <br>
+                                             {% comment %} <input readonly   name="checkin-date" value={{i.checkin}}> {% endcomment %}
+                                        {% comment %} </div> {% endcomment %}
+                                        {% comment %} <div class="col-6"> {% endcomment %}
+                                            CheckOut Date : {{i.checkout}}
+                                            {% comment %} <input readonly   id="checkIn" name="checkout-date" value={{i.checkout}}> {% endcomment %}
+                                        {% comment %} </div> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% comment %} {{i.Rno.roomtype.name}} {% endcomment %}
+                              <div class="form-group mb-30">
+                             <select readonly  name="room" id="room" class="form-control">
+                                    <option value="{{i.RNo.roomtype.id}}">{{i.RNo.roomtype.name}}</option>
+                                </select>
+                            </div>
+                             {% comment %} <div class="form-group mb-30">
+                                 <label for="checkInDate">Rs. {{i.Rno.roomtype.cost}}</label>
+                                </div> {% endcomment %}
+                            <div class="form-group">
+                                <button type="submit" class="btn roberto-btn w-100" value={{i.RNo}} name="cancel">Cancel</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     {% endfor %}
+    <!-- Rooms \Area End -->
+
+    <!-- Call To Action Area Start -->
+    <section class="roberto-cta-area">
+        <div class="container">
+            <div class="cta-content bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/1.jpg);">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-7">
+                        <div class="cta-text mb-50">
+                            <h2>Contact us now!</h2>
+                            <h6>Contact (+12) 345-678-9999 to book directly or for advice</h6>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 text-right">
+                        <a href="{% static '#' %}" class="btn roberto-btn mb-50">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Area End -->
+
+    <!-- Partner Area Start -->
+    <div class="partner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="partner-logo-content d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Single Partner Logo -->
+                        <a href="{% static '#' %}" class="partner-logo"><img src="{% static 'img/core-img/p1.png' %}" alt=""></a>
+                        <!-- Single Partner Logo -->
+                        <a href="{% static '#' %}" class="partner-logo"><img src="{% static 'img/core-img/p2.png' %}" alt=""></a>
+                        <!-- Single Partner Logo -->
+                        <a href="{% static '#' %}" class="partner-logo"><img src="{% static 'img/core-img/p3.png' %}" alt=""></a>
+                        <!-- Single Partner Logo -->
+                        <a href="{% static '#' %}" class="partner-logo"><img src="{% static 'img/core-img/p4.png' %}" alt=""></a>
+                        <!-- Single Partner Logo -->
+                        <a href="{% static '#' %}" class="partner-logo"><img src="{% static 'img/core-img/p5.png' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Area End -->
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area section-padding-80-0">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row align-items-baseline justify-content-between">
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Footer Logo -->
+                            <a href="{% static '#' %}" class="footer-logo"><img src="{% static '{{room.img.url}}' %}" alt=""></a>
+
+                            <h4>+12 345-678-9999</h4>
+                            <span>Info.colorlib@gmail.com</span>
+                            <span>856 Cordia Extension Apt. 356, Lake Deangeloburgh, South Africa</span>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Our Blog</h5>
+
+                            <!-- Single Blog Area -->
+                            <div class="latest-blog-area">
+                                <a href="{% static '#' %}" class="post-title">Freelance Design Tricks How</a>
+                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2019</span>
+                            </div>
+
+                            <!-- Single Blog Area -->
+                            <div class="latest-blog-area">
+                                <a href="{% static '#' %}" class="post-title">Free Advertising For Your Online</a>
+                                <span class="post-date"><i class="fa fa-clock-o" aria-hidden="true"></i> Jan 02, 2019</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-4 col-lg-2">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Links</h5>
+
+                            <!-- Footer Nav -->
+
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget Area -->
+                    <div class="col-12 col-sm-8 col-lg-4">
+                        <div class="single-footer-widget mb-80">
+                            <!-- Widget Title -->
+                            <h5 class="widget-title">Subscribe Newsletter</h5>
+                            <span>Subscribe our newsletter gor get notification about new updates.</span>
+
+                            <!-- Newsletter Form -->
+                            <form action="index.html' %}" class="nl-form">
+                                <input type="email" class="form-control" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="container">
+            <div class="copywrite-content">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-8">
+                        <!-- Copywrite Text -->
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Social Info -->
+                        <div class="social-info">
+                            <a href="{% static '#' %}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="{% static '#' %}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="{% static '#' %}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="{% static '#' %}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Popper -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- All Plugins -->
+    <script src="{% static 'js/roberto.bundle.js' %}"></script>
+    <!-- Active -->
+    <script src="{% static 'js/default-assets/active.js' %}"></script>
+
+</body>
+
+</html>

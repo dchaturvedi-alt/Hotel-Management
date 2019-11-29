@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {{user.first_name}}
+    {{user.last_name}}<br>  
+    {% for i in bookings %}
+    Room No:   {{i.RNo}}<br>
+    Room Type:  {{i.RNo.roomtype}}<br>
+    CheckIn Date:  {{i.checkin}}<br>
+    CheckOut Date:  {{i.checkout}}<br>
+    Price: Rs.{{i.RNo.roomtype.cost}}<br>
+   
+    <br>
+    {% endfor %}
+     <a href={% url 'cancel' %}> Cancel</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cancel</title>
+</head>
+<body>
+    {% if flag is True %}
+        Cancellation Successful
+        Redirecting to home page
+<script type="text/javascript">
+    setTimeout("window.location='/'",700);
+    </script>
+
+    {% else %}
+         <form action="" method="post">
+            {% csrf_token %}
+                {% for i in bookings %}
+                    Room No:   {{i.RNo}}<br>
+                    Room Type:  {{i.RNo.roomtype}}<br>
+                    CheckIn Date:  {{i.checkin}}<br>
+                    CheckOut Date:  {{i.checkout}}<br>
+                    Price: Rs.{{i.RNo.roomtype.cost}}<br>
+                    <input type="submit" value={{i.RNo}} name="cancel">
+                    <br>
+            {% endfor %}    
+         </form>
+    {% endif %}
+</body>
+</html>
